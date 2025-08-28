@@ -8,7 +8,12 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Santiago Espinoza - Portfolio",
   description: "Interactive portfolio showcasing projects, leadership, and experience",
-  generator: "v0.app",
+  applicationName: "Santiago Espinoza Portfolio",
+  keywords: ["Santiago Espinoza", "Portfolio", "Projects", "Leadership", "Experience"],
+  authors: [{ name: "Santiago Espinoza", url: "https://santiagoespinoza.dev" }],
+  icons: {
+    icon: "/icon.ico",
+  }
 }
 
 export default function RootLayout({
