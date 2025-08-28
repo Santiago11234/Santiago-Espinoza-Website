@@ -85,7 +85,7 @@ export default function HomePage() {
 			<Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
 
 			<motion.div
-				className="fixed w-6 h-6 bg-primary/30 rounded-full pointer-events-none z-40 mix-blend-difference"
+				className="hidden md:block fixed w-6 h-6 bg-primary/30 rounded-full pointer-events-none z-40 mix-blend-difference"
 				style={{
 					x: springX,
 					y: springY,
