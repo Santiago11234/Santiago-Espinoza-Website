@@ -137,7 +137,7 @@ export default function HomePage() {
 				</>
 
 				<motion.div
-					className="absolute md:top-40 md:right-40 z-50 md:w-32 md:h-32 w-16 h-16 top-40 right-12"
+					className="absolute md:top-40 md:right-40 z-50 md:w-32 md:h-32 w-16 h-16 top-20 right-12"
 					initial={{ opacity: 0, scale: 0, rotate: -90 }}
 					animate={{ opacity: 1, scale: 1, rotate: 0 }}
 					transition={{ delay: 1.5, duration: 0.8, type: "spring", stiffness: 200 }}
