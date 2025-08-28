@@ -258,7 +258,7 @@ export default function HomePage() {
 							<Button
 								variant="outline"
 								size="lg"
-								className="!border-primary !bg-primary-foreground !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group"
+								className="!border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group"
 								onClick={() => {
 									const link = document.createElement("a");
 									link.href = "/Resume.pdf";
