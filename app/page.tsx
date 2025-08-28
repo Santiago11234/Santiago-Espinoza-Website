@@ -9,7 +9,7 @@ import { ThreeSceneLoader } from "@/components/three-scene-loader";
 import { LeadershipSection } from "@/components/flip-card";
 import { AboutSection } from "@/components/about-section";
 import { InternshipSection } from "@/components/internship-section";
-import { Github, Linkedin, Mail } from "lucide-react"; 
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function HomePage() {
 	const [isHovered, setIsHovered] = useState(false);
@@ -131,7 +131,10 @@ export default function HomePage() {
 			</motion.div>
 
 			<section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-				<div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+				<>
+					<div className="absolute inset-0 bg-gradient-to-br from-background to-primary/10" />
+					<div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-orange-400/10" />
+				</>
 
 				<motion.div
 					className="absolute md:top-40 md:right-40 z-50 md:w-32 md:h-32 w-16 h-16 top-40 right-12"
@@ -258,8 +261,8 @@ export default function HomePage() {
 								className="!border-primary !bg-primary-foreground !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group"
 								onClick={() => {
 									const link = document.createElement("a");
-									link.href = "/Resume.pdf"; 
-									link.download = "Santiago_Espinoza_Resume.pdf"; 
+									link.href = "/Resume.pdf";
+									link.download = "Santiago_Espinoza_Resume.pdf";
 									link.click();
 								}}>
 								<motion.div className="absolute inset-0 bg-primary" initial={{ scale: 0 }} whileHover={{ scale: 1 }} transition={{ duration: 0.3 }} style={{ originX: 0.5, originY: 0.5 }} />
@@ -308,36 +311,18 @@ export default function HomePage() {
 
 			<LeadershipSection />
 
-      <footer className="w-full border-t border-border/50 bg-background/80 backdrop-blur-md">
+			<footer className="w-full border-t border-border/50 bg-background/80 backdrop-blur-md">
 				<div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-					
-					{/* Left side - name */}
-					<p className="text-sm text-muted-foreground">
-						{new Date().getFullYear()} Santiago Espinoza. 
-					</p>
+					<p className="text-sm text-muted-foreground">{new Date().getFullYear()} Santiago Espinoza.</p>
 
-					{/* Right side - social links */}
 					<div className="flex gap-6">
-						<a
-							href="https://github.com/Santiago11234"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground hover:text-primary transition-colors"
-						>
+						<a href="https://github.com/Santiago11234" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
 							<Github className="w-6 h-6" />
 						</a>
-						<a
-							href="https://www.linkedin.com/in/santiago-espinoza-blunda/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground hover:text-primary transition-colors"
-						>
+						<a href="https://www.linkedin.com/in/santiago-espinoza-blunda/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
 							<Linkedin className="w-6 h-6" />
 						</a>
-						<a
-							href="mailto:santiagogeb@gmail.com"
-							className="text-muted-foreground hover:text-primary transition-colors"
-						>
+						<a href="mailto:santiagogeb@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
 							<Mail className="w-6 h-6" />
 						</a>
 					</div>

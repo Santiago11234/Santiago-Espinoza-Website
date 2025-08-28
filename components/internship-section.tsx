@@ -153,7 +153,7 @@ function InternshipCard({
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
 						<div className="space-y-4">
 							<div className="flex items-center gap-3 mb-6">
-								<Trophy className="w-6 h-6 text-primary" />
+								<Trophy className="w-6 h-6 " style={{color: internship.color}} />
 								<h4 className="text-2xl font-bold text-foreground">Key Achievements</h4>
 							</div>
 
@@ -167,7 +167,7 @@ function InternshipCard({
 
 						<div className="space-y-4">
 							<div className="flex items-center gap-3 mb-6">
-								<Code className="w-6 h-6 text-primary" />
+								<Code className="w-6 h-6" style={{color: internship.color}} />
 								<h4 className="text-2xl font-bold text-foreground">Technologies Used</h4>
 							</div>
 
@@ -190,7 +190,7 @@ function InternshipCard({
 
 							<motion.div className="mt-8 p-6 rounded-xl border border-primary/20 bg-primary/5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }}>
 								<div className="flex items-center gap-3 mb-3">
-									<Zap className="w-5 h-5 text-primary" />
+									<Zap className="w-5 h-5" style={{color: internship.color}} />
 									<h5 className="font-semibold text-foreground">Impact & Learning</h5>
 								</div>
 								<p className="text-sm text-muted-foreground leading-relaxed">This internship was instrumental in developing my expertise in {internship.technologies.slice(0, 2).join(" and ")}, while also strengthening my ability to work in fast-paced, collaborative environments with global impact.</p>
