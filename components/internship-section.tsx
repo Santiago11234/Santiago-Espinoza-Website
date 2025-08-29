@@ -73,7 +73,7 @@ function InternshipCard({
 
 	return (
 		<>
-			<motion.div className={`relative cursor-pointer transition-all duration-500 ${isActive ? "scale-105 z-10" : "scale-100 hover:scale-102"}`} initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }} onClick={() => setIsModalOpen(true)}>
+			<motion.div className={`relative cursor-pointer transition-all duration-500 ${isActive ? "scale-105 z-10" : "scale-100 hover:scale-102 active:scale-102"}`} initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }} onClick={() => setIsModalOpen(true)}>
 				
 				<div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-primary/50 to-transparent transform -translate-x-1/2 z-0 hidden md:block" />
 
@@ -87,9 +87,10 @@ function InternshipCard({
 							borderColor: isActive ? `${internship.color}50` : undefined,
 						}}
 						whileHover={{ y: -5 }}
+						whileTap={{ y: -5 }}
 						animate={isActive ? { boxShadow: `0 20px 40px ${internship.color}20` } : {}}>
 						
-						<div className="absolute top-[-20] right-[-20] w-32 h-32 rounded-full opacity-5 group-hover:opacity-10 transition-opacity" style={{ backgroundColor: internship.color }} />
+						<div className="absolute top-[-20] right-[-20] w-32 h-32 rounded-full opacity-5 group-hover:opacity-10 group-active:opacity-10transition-opacity" style={{ backgroundColor: internship.color }} />
 
 						<div className="flex items-start justify-between mb-4">
 							<div className="flex items-center gap-3">
@@ -158,7 +159,7 @@ function InternshipCard({
 							</div>
 
 							{internship.achievements.map((achievement, index) => (
-								<motion.div key={index} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-colors" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.1 }} whileHover={{ scale: 1.02, x: 5 }}>
+								<motion.div key={index} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 active:border-primary/30transition-colors" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.1 }} whileHover={{ scale: 1.02, x: 5 }} whileTap={{ scale: 1.02, x: 5 }}>
 									<div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: internship.color }} />
 									<p className="text-muted-foreground leading-relaxed">{achievement}</p>
 								</motion.div>
@@ -175,14 +176,15 @@ function InternshipCard({
 								{internship.technologies.map((tech, index) => (
 									<motion.div
 										key={tech}
-										className="p-3 rounded-xl border border-border/50 text-center hover:border-primary/30 transition-colors"
+										className="p-3 rounded-xl border border-border/50 text-center hover:border-primary/30 active:border-primary/30 transition-colors"
 										style={{
 											background: `linear-gradient(135deg, ${internship.color}10, transparent)`,
 										}}
 										initial={{ opacity: 0, scale: 0.8 }}
 										animate={{ opacity: 1, scale: 1 }}
 										transition={{ duration: 0.3, delay: index * 0.05 }}
-										whileHover={{ scale: 1.05, y: -2 }}>
+										whileHover={{ scale: 1.05, y: -2 }}
+										whileTap={{ scale: 1.05, y: -2 }}>
 										<span className="font-medium text-foreground">{tech}</span>
 									</motion.div>
 								))}
@@ -235,7 +237,7 @@ export function InternshipSection() {
 						</div>
 						<Button
 							size="lg"
-							className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl font-semibold"
+							className="bg-primary hover:bg-primary/90 active:bg-primary/90text-primary-foreground px-6 py-3 rounded-xl font-semibold"
 							onClick={() => {
 								const link = document.createElement("a");
 								link.href = "/Resume.pdf"; 

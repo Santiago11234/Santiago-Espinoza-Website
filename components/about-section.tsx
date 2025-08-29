@@ -37,7 +37,7 @@ const quickFacts = [
 	{
 		icon: <Target className="w-5 h-5" />,
 		label: "Favorite Language",
-		value: "TypeScript (for the type safety!)",
+		value: "TypeScript",
 	},
 	{
 		icon: <Database className="w-5 h-5" />,
@@ -74,7 +74,7 @@ export function AboutSection() {
 
 						<div className="space-y-4">
 							{quickFacts.map((fact, index) => (
-								<motion.div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 group" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} whileHover={{ scale: 1.02, x: 5 }}>
+								<motion.div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 active:border-primary/30 transition-all duration-300 group " initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} whileHover={{ scale: 1.02, x: 5 }} whileTap={{ scale: 1.02, x:5 }}>
 									<motion.div className="text-primary group-hover:scale-110 transition-transform" whileHover={{ rotate: 5 }}>
 										{fact.icon}
 									</motion.div>
@@ -131,11 +131,14 @@ export function AboutSection() {
 												backgroundColor: "var(--primary)",
 												color: "var(--primary-foreground)",
 											}}
+											whileTap={{
+												scale: 1.05,
+												backgroundColor: "var(--primary)",
+												color: "var(--primary-foreground)",
+											}}
 											transition={{
 												type: "spring",
 												stiffness: 400,
-												backgroundColor: { duration: 0.2 },
-												color: { duration: 0.2 },
 											}}
 											initial={{ opacity: 0, scale: 0.8 }}
 											whileInView={{ opacity: 1, scale: 1 }}>
@@ -155,7 +158,7 @@ export function AboutSection() {
 						{ number: "24/7", label: "Learning Mode", color: "#f7931e" },
 						{ number: "100%", label: "Passion for Innovation", color: "#ff8c42" },
 					].map((stat, index) => (
-						<motion.div key={index} className="text-center p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300" whileHover={{ scale: 1.05, y: -5 }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+						<motion.div key={index} className="text-center p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 active:border-primary/30 transition-all duration-300" whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 1.05, y: -5 }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
 							<motion.div className="text-3xl font-bold mb-2" style={{ color: stat.color }} animate={{ scale: [1, 1.1, 1] }}>
 								{stat.number}
 							</motion.div>
