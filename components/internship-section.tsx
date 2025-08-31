@@ -58,23 +58,12 @@ const internships: Internship[] = [
 	},
 ];
 
-function InternshipCard({
-	internship,
-	index,
-	isActive,
-}: 
-{
-	internship: Internship;
-	index: number;
-	isActive: boolean;
-	onClick: () => void;
-}) {
+function InternshipCard({ internship, index, isActive }: { internship: Internship; index: number; isActive: boolean; onClick: () => void }) {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	return (
 		<>
 			<motion.div className={`relative cursor-pointer transition-all duration-500 ${isActive ? "scale-105 z-10" : "scale-100 hover:scale-102 active:scale-102"}`} initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: index * 0.2 }} onClick={() => setIsModalOpen(true)}>
-				
 				<div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-primary/50 to-transparent transform -translate-x-1/2 z-0 hidden md:block" />
 
 				<motion.div className="absolute left-1/2 top-8 w-6 h-6 rounded-full border-4 border-background z-20 transform -translate-x-1/2 hidden md:block" style={{ backgroundColor: internship.color }} animate={isActive ? { scale: [1, 1.2, 1] } : { scale: 1 }} transition={{ duration: 2, repeat: isActive ? Number.POSITIVE_INFINITY : 0 }} />
@@ -89,7 +78,6 @@ function InternshipCard({
 						whileHover={{ y: -5 }}
 						whileTap={{ y: -5 }}
 						animate={isActive ? { boxShadow: `0 20px 40px ${internship.color}20` } : {}}>
-						
 						<div className="absolute top-[-20] right-[-20] w-32 h-32 rounded-full opacity-5 group-hover:opacity-10 group-active:opacity-10transition-opacity" style={{ backgroundColor: internship.color }} />
 
 						<div className="flex items-start justify-between mb-4">
@@ -154,7 +142,7 @@ function InternshipCard({
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
 						<div className="space-y-4">
 							<div className="flex items-center gap-3 mb-6">
-								<Trophy className="w-6 h-6 " style={{color: internship.color}} />
+								<Trophy className="w-6 h-6 " style={{ color: internship.color }} />
 								<h4 className="text-2xl font-bold text-foreground">Key Achievements</h4>
 							</div>
 
@@ -168,7 +156,7 @@ function InternshipCard({
 
 						<div className="space-y-4">
 							<div className="flex items-center gap-3 mb-6">
-								<Code className="w-6 h-6" style={{color: internship.color}} />
+								<Code className="w-6 h-6" style={{ color: internship.color }} />
 								<h4 className="text-2xl font-bold text-foreground">Technologies Used</h4>
 							</div>
 
@@ -192,7 +180,7 @@ function InternshipCard({
 
 							<motion.div className="mt-8 p-6 rounded-xl border border-primary/20 bg-primary/5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }}>
 								<div className="flex items-center gap-3 mb-3">
-									<Zap className="w-5 h-5" style={{color: internship.color}} />
+									<Zap className="w-5 h-5" style={{ color: internship.color }} />
 									<h5 className="font-semibold text-foreground">Impact & Learning</h5>
 								</div>
 								<p className="text-sm text-muted-foreground leading-relaxed">This internship was instrumental in developing my expertise in {internship.technologies.slice(0, 2).join(" and ")}, while also strengthening my ability to work in fast-paced, collaborative environments with global impact.</p>
@@ -235,17 +223,11 @@ export function InternshipSection() {
 							<Building2 className="w-6 h-6 text-primary" />
 							<span className="text-lg font-semibold text-foreground">Still not impressed?</span>
 						</div>
-						<Button
-							size="lg"
-							className="bg-primary hover:bg-primary/90 active:bg-primary/90text-primary-foreground px-6 py-3 rounded-xl font-semibold"
-							onClick={() => {
-								const link = document.createElement("a");
-								link.href = "/Resume.pdf"; 
-								link.download = "Santiago_Espinoza_Resume.pdf"; 
-								link.click();
-							}}>
+						<Button size="lg" className="bg-primary hover:bg-primary/90 active:bg-primary/90text-primary-foreground px-6 py-3 rounded-xl font-semibold">
 							<ExternalLink className="w-4 h-4 mr-2" />
-							View Full Resume
+							<a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+								View Full Resume
+							</a>
 						</Button>
 					</div>
 				</motion.div>

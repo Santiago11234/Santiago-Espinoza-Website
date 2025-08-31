@@ -258,18 +258,16 @@ export default function HomePage() {
 							<Button
 								variant="outline"
 								size="lg"
-								className="!border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group"
-								onClick={() => {
-									const link = document.createElement("a");
-									link.href = "/Resume.pdf";
-									link.download = "Santiago_Espinoza_Resume.pdf";
-									link.click();
-								}}>
+								className="!border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group" 
+								>
 								<motion.div className="absolute inset-0 bg-primary" initial={{ scale: 0 }} whileHover={{ scale: 1 }} transition={{ duration: 0.3 }} style={{ originX: 0.5, originY: 0.5 }} />
-								<span className="relative z-10 flex items-center">
+                <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" >
+                <span className="relative z-10 flex items-center">
 									<Download className="mr-2 h-5 w-5" />
 									Download Resume
 								</span>
+                </a>
+								
 							</Button>
 						</motion.div>
 					</motion.div>
