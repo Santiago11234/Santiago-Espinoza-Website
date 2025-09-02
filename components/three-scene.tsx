@@ -65,7 +65,7 @@ const projectsData = [
 		image: "/images/safe.png",
 		technologies: ["Python", "PostgreSQL", "React", "Tailwind", "TensorFlow"],
 		github: "https://github.com/santiago/facial-recognition-hall-pass",
-		demo: "https://hall-pass-demo.vercel.app",
+		demo: "https://safe-guard-id.vercel.app/",
 		category: "Security/IoT",
 		featured: false,
 		longDescription: "A modern school safety solution that digitizes the traditional hall pass system. Features facial recognition for student identification, real-time location tracking, automated check-in/check-out processes, and comprehensive administrative dashboard for monitoring student movement.",
