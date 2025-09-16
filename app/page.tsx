@@ -255,19 +255,14 @@ export default function HomePage() {
 							</Button>
 						</motion.div>
 						<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-							<Button
-								variant="outline"
-								size="lg"
-								className="!border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group" 
-								>
+							<Button variant="outline" size="lg" className="!border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 relative overflow-hidden group">
 								<motion.div className="absolute inset-0 bg-primary" initial={{ scale: 0 }} whileHover={{ scale: 1 }} transition={{ duration: 0.3 }} style={{ originX: 0.5, originY: 0.5 }} />
-                <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" >
-                <span className="relative z-10 flex items-center">
-									<Download className="mr-2 h-5 w-5" />
-									Download Resume
-								</span>
-                </a>
-								
+								<a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+									<span className="relative z-10 flex items-center">
+										<Download className="mr-2 h-5 w-5" />
+										Download Resume
+									</span>
+								</a>
 							</Button>
 						</motion.div>
 					</motion.div>
