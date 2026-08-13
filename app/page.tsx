@@ -10,6 +10,7 @@ import { LeadershipSection } from "@/components/flip-card";
 import { AboutSection } from "@/components/about-section";
 import { InternshipSection } from "@/components/internship-section";
 import { Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function HomePage() {
 	const [isHovered, setIsHovered] = useState(false);
@@ -146,10 +147,12 @@ export default function HomePage() {
 						rotate: [0, -5, 5, 0],
 						transition: { duration: 0.5 },
 					}}>
-					<img
+					<Image
 						src="/longhorn.png"
 						alt="Longhorn"
-						className="w-full h-full object-contain filter drop-shadow-lg rotate-45"
+						width={128}
+						height={128}
+						className="w-full h-full object-contain rotate-45"
 						style={{
 							filter: "drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3))",
 						}}
