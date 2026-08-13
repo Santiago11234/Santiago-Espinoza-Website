@@ -190,17 +190,17 @@ const leadershipData = [
   },
   {
     responsibility: {
-      title: "Academic Excellence",
+      title: "Convergent — Operations Chair",
       description:
-        "AP Scholar with Distinction, PSAT National Hispanic Recognition, perfect 5s in AP Computer Science A, Calculus BC, Statistics, and many more",
-      icon: <Star />,
+        "Plan and execute club, alumni, and sponsor events with the Board — coordinating partners, logistics, and day-of officer responsibilities for UT Austin's startup incubator",
+      icon: <Users />,
       color: "#8b5cf6",
     },
     achievement: {
-      title: "Multi-Organization Founder",
+      title: "Convergent — Tech Lead",
       description:
-        "Founded first two middle school TSA chapters in district with 100+ members, secured district approval and funding",
-      icon: <Users />,
+        "Lead build teams through a semester-long product development curriculum at UT Austin's startup incubator, coaching members on coding practices and AI tooling",
+      icon: <Zap />,
       color: "#8b5cf6",
     },
   },
@@ -230,29 +230,6 @@ export function LeadershipSection() {
             <FlipCard key={index} achievement={item.achievement} responsibility={item.responsibility} index={index} />
           ))}
         </div>
-
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            >
-              <Zap className="w-4 h-4 text-primary" />
-            </motion.div>
-            <span>Interactive cards - click to explore both sides</span>
-            <motion.div
-              animate={{ rotate: [360, 0] }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            >
-              <Zap className="w-4 h-4 text-primary" />
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

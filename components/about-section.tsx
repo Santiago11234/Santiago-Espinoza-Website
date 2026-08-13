@@ -12,7 +12,7 @@ const quickFacts = [
 	{
 		icon: <GraduationCap className="w-5 h-5" />,
 		label: "Education",
-		value: "Computer Science, Seven Lakes High School",
+		value: "Computer Science @ UT Austin (Exp. May 2028)",
 	},
 	{
 		icon: <Code className="w-5 h-5" />,
@@ -32,7 +32,7 @@ const quickFacts = [
 	{
 		icon: <Camera className="w-5 h-5" />,
 		label: "Side Projects",
-		value: "IOS app development",
+		value: "Trying to build Jarvis with multi-agent orchestration",
 	},
 	{
 		icon: <Target className="w-5 h-5" />,
@@ -117,7 +117,7 @@ export function AboutSection() {
 											<Zap className="w-6 h-6 text-primary" />
 											<h4 className="text-lg font-semibold text-foreground">Current Focus</h4>
 										</div>
-										<p className="text-sm">I&apos;m currently exploring workings of AWS and developing IOS apps with swift. I&apos;ll come back to full stack development with react soon, but for now, I&apos;m expanding my skills to more areas that will allow me to grow as a developer!</p>
+										<p className="text-sm">I&apos;m currently focused on AI tooling — building RAG systems, MCP servers, and developer productivity tools. I&apos;m returning to Keysight Technologies in Fall 2026 to continue that work, and I&apos;m also leading build teams at Convergent and shipping React Native apps!</p>
 									</motion.div>
 								</motion.div>
 

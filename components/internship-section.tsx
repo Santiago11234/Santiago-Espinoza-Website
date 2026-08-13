@@ -16,31 +16,58 @@ interface Internship {
 	achievements: string[];
 	technologies: string[];
 	color: string;
-	logo: string;
+	logo?: string;
 }
 
 const internships: Internship[] = [
 	{
-		id: "driven-telematics",
-		company: "Driven Telematics",
-		role: "Project Intern",
-		duration: "Aug 2025 - Present",
-		location: "Katy, TX (Remote)",
-		description: "Built comprehensive API infrastructure for driving data systems, implementing enterprise-level security and auditing across the entire AWS stack to streamline data upload and retrieval processes.",
-		achievements: ["Architected full API endpoint with comprehensive auditing and security", "Implemented enterprise AWS stack including Gateway, Lambda, Aurora, S3", "Established CloudWatch monitoring and CloudTrail logging for system transparency", "Deployed IAM roles and Secrets Manager for secure credential management"],
-		technologies: ["AWS API Gateway", "AWS Lambda", "Aurora", "S3", "CloudWatch", "Firehose", "IAM", "Secrets Manager", "CloudTrail", "JavaScript"],
-		color: "#ff6b35",
-		logo: "/driven.png",
+		id: "servicenow",
+		company: "ServiceNow",
+		role: "Software Engineering Intern",
+		duration: "May 2026 — Jul 2026",
+		location: "Santa Clara, CA",
+		description: "Delivered production-impacting features across Virtual Agent integrations and platform infrastructure, including a UI rebrand, a live business rule bug fix, and full regression testing ownership for Microsoft Teams.",
+		achievements: [
+			"Built the admin configuration experience for Virtual Agent integrations across Teams, Google Chat, and Slack",
+			"Delivered a UI rebrand across multiple product repos and release trains, backed by Jest and Java test coverage",
+			"Fixed a cross-scope permission failure in a production business rule by moving OAuth access into a scoped Script Include",
+			"Owned regression testing for a Microsoft Teams virtual assistant, building Playwright and ATF suites plus test environments from scratch",
+		],
+		technologies: ["ServiceNow", "JavaScript", "Java", "Jest", "Playwright", "ATF", "OAuth", "Microsoft Teams API"],
+		color: "#00a78e",
+		logo: "/servicenow.png",
 	},
 	{
-		id: "driven-telematics-summer",
+		id: "keysight",
+		company: "Keysight Technologies",
+		role: "Software Engineering Intern — AI Tooling & Test Automation",
+		duration: "Jan 2026 — May 2026 • Returning Sept 2026",
+		location: "Austin, TX",
+		description: "Built AI-powered developer tooling and automated lab infrastructure — a RAG assistant surfaced inside GitHub Copilot via MCP, and a cross-platform Python scanner for lab hardware inventory.",
+		achievements: [
+			"Built a RAG assistant that answers developers' test-planning questions from internal docs via ChromaDB embeddings and FastAPI",
+			"Wrote an MCP server (FastMCP) that surfaces the assistant inside GitHub Copilot and OpenCode with source citations",
+			"Automated lab hardware inventory with a Python scanner that probes subnets and fingerprints devices over REST and SOAP APIs",
+			"Packaged as a standalone cross-platform executable with PyInstaller, configurable credentials, and legacy TLS support",
+		],
+		technologies: ["Python", "ChromaDB", "FastAPI", "FastMCP", "PyInstaller", "MCP", "REST APIs", "SOAP", "GitHub Copilot"],
+		color: "#e53935",
+		logo: "/keysight.png",
+	},
+	{
+		id: "driven-telematics",
 		company: "Driven Telematics",
-		role: "Summer Intern",
-		duration: "Apr 2025 - Jul 2025",
+		role: "Software Engineering Intern",
+		duration: "Apr 2025 — Apr 2026",
 		location: "Katy, TX (Remote)",
-		description: "Designed and planned MVP for driving data retrieval system from concept to implementation, creating comprehensive technical documentation and system architecture before building the foundational infrastructure.",
-		achievements: ["Drafted complete MVP architecture for driving data retrieval system", "Created detailed UML diagrams and system design documentation", "Developed comprehensive sample tests and validation frameworks", "Built secure test API endpoint with AWS services integration"],
-		technologies: ["AWS CloudFormation", "AWS Lambda", "JavaScript", "GitHub", "UML Design", "System Architecture"],
+		description: "Built a telemetry ingestion and retrieval service on AWS within an Agile delivery team, designing the full data pipeline from schema to observability.",
+		achievements: [
+			"Built a telemetry ingestion and retrieval service on AWS API Gateway and Lambda within an Agile delivery team",
+			"Implemented a REST API querying multiple Kinesis Firehose streams in parallel with sub-second response times",
+			"Designed the PostgreSQL schema on Aurora and containerized deployments with Docker for environment consistency",
+			"Instrumented CloudWatch and S3 logging to give 100% request traceability across every data flow",
+		],
+		technologies: ["AWS API Gateway", "AWS Lambda", "Aurora", "Kinesis Firehose", "Docker", "CloudWatch", "S3", "IAM", "PostgreSQL"],
 		color: "#ff6b35",
 		logo: "/driven.png",
 	},
@@ -48,10 +75,15 @@ const internships: Internship[] = [
 		id: "karatube",
 		company: "Karatube",
 		role: "Frontend Developer Intern",
-		duration: "Mar 2024 - Aug 2024",
+		duration: "Mar 2024 — Aug 2024",
 		location: "Katy, TX (Remote)",
-		description: "Developed innovative karaoke extension integrating with YouTube, creating real-time lyric synchronization powered by AI analysis and cloud computing for seamless user experience.",
-		achievements: ["Built complete front-end design for YouTube karaoke extension", "Developed AI-powered lyric synchronization algorithm", "Implemented real-time music and lyric alignment system", "Deployed serverless architecture using AWS Lambda for scalability"],
+		description: "Developed an innovative karaoke extension integrating with YouTube, creating real-time lyric synchronization powered by AI analysis and serverless cloud computing.",
+		achievements: [
+			"Built complete front-end design for YouTube karaoke extension",
+			"Developed AI-powered lyric synchronization algorithm",
+			"Implemented real-time music and lyric alignment system",
+			"Deployed serverless architecture using AWS Lambda for scalability",
+		],
 		technologies: ["Svelte", "AWS Lambda", "GitHub", "YouTube API", "AI Integration", "Real-time Synchronization"],
 		color: "#ff0000",
 		logo: "/karatube.png",
@@ -82,7 +114,13 @@ function InternshipCard({ internship, index, isActive }: { internship: Internshi
 
 						<div className="flex items-start justify-between mb-4">
 							<div className="flex items-center gap-3">
-								<img className="w-16 h-16" src={internship.logo} />
+								{internship.logo ? (
+									<img className="w-16 h-16" src={internship.logo} />
+								) : (
+									<div className="w-16 h-16 rounded-xl flex items-center justify-center text-2xl font-bold text-white flex-shrink-0" style={{ backgroundColor: internship.color }}>
+										{internship.company[0]}
+									</div>
+								)}
 								<div>
 									<h3 className="text-xl font-bold text-foreground">{internship.company}</h3>
 									<p className="font-semibold" style={{ color: internship.color }}>
@@ -131,7 +169,13 @@ function InternshipCard({ internship, index, isActive }: { internship: Internshi
 				<DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
 					<DialogHeader>
 						<DialogTitle className="text-3xl font-bold flex items-center gap-3">
-							<img className="w-16 h-16" src={internship.logo} />
+							{internship.logo ? (
+								<img className="w-16 h-16" src={internship.logo} />
+							) : (
+								<div className="w-16 h-16 rounded-xl flex items-center justify-center text-2xl font-bold text-white flex-shrink-0" style={{ backgroundColor: internship.color }}>
+									{internship.company[0]}
+								</div>
+							)}
 							<div>
 								<div style={{ color: internship.color }}>{internship.company}</div>
 								<div className="text-lg text-muted-foreground font-normal">{internship.role}</div>

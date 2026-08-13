@@ -240,7 +240,7 @@ export default function HomePage() {
 							<motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}>
 								<Sparkles className="w-5 h-5" />
 							</motion.div>
-							<span className="text-sm font-medium">Freshman CS @ UT Austin</span>
+							<span className="text-sm font-medium">Junior CS @ UT Austin</span>
 							<motion.div animate={{ rotate: -360 }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}>
 								<Sparkles className="w-5 h-5" />
 							</motion.div>
